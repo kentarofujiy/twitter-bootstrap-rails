@@ -10,7 +10,7 @@
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
 
-      <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %><%= resource_name %>.<%= column.index %></h5>
+      <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %> <%%= <%= resource_name %>.<%= column.index %> %></h5>
        <h3 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %> <%= index %></h3>
       <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>-->
       
