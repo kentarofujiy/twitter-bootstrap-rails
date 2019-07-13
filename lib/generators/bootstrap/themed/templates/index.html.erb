@@ -3,11 +3,11 @@
   <h1><%%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <div class="row">
-      <div class="card" style="width: 18rem;"> ERB
+    
+<%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
+     <div class="card" style="width: 18rem;"> ERB
       <img class="card-img-top" src="https://picsum.photo/100/180/" alt="Card image cap">
  <div class="card-body">
-<%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-   
   <%- columns.each do |column| -%>
 
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
@@ -25,11 +25,11 @@
  
   
     <%- end -%>
-
-  <%% end %>
      </div>
       </div>
 </div>
+  <%% end %>
+
 
 <%%= link_to t('.new', :default => t("helpers.links.new")),
             new_<%= singular_controller_routing_path %>_path,
