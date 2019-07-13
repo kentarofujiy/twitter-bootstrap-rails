@@ -12,8 +12,10 @@
       <% if index == 0 %>
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
       <% elsif index == 1 %>
-      <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %> <%= index %></p>
-      <% end %>
+      <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %></p>
+      <% else %>
+       <small class=""><%%= <%= resource_name %>.<%= column.name %> %></small>
+       <% end %>
     <%- end -%>
      </div>
       <%%= link_to t('.show', :default => t("helpers.links.show")),
