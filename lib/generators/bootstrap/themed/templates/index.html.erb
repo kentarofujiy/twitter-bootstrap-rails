@@ -69,12 +69,8 @@
     </ol>
     <div class="carousel-inner">
       <%% @<%= plural_resource_name %>.each_with_index do |<%= resource_name %>| %>
-      <% if index == 0 %>
-      <div class="carousel-item active">
-      <% else %>  
-            <div class="carousel-item">
-      <% end %>
-
+           <div class="carousel-item">
+  
         <img src="https://picsum.photos/960" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
                   <%- columns.each_with_index do |column, index| -%>
