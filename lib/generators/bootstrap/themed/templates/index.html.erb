@@ -9,13 +9,11 @@
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
-
+      <% if index == 0 %>
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
-       <h3 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %> <%= index %></h3>
-      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>-->
-      
- 
-  
+      <% elsif index == 1 %>
+      <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %> <%= index %></p>
+      <% end %>
     <%- end -%>
      </div>
       <%%= link_to t('.show', :default => t("helpers.links.show")),
