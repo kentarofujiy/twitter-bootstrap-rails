@@ -3,12 +3,13 @@
   <h1><%%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <div class="row">
-<%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-  
-  <%- columns.each do |column| -%>
-  <div class="card" style="width: 18rem;"> ERB
+      <div class="card" style="width: 18rem;"> ERB
       <img class="card-img-top" src="https://picsum.photo/100/180/" alt="Card image cap">
+
+<%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
     <div class="card-body">
+  <%- columns.each do |column| -%>
+
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
        <%%= link_to t('.show', :default => t("helpers.links.show")),
@@ -22,10 +23,11 @@
                       :class => 'btn btn-xs btn-danger' %>
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
-      </div>
+  
     <%- end -%>
 
   <%% end %>
+      </div>
 </div>
 
 <%%= link_to t('.new', :default => t("helpers.links.new")),
