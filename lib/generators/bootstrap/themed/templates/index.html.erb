@@ -5,9 +5,9 @@
 <div class="row">
       <div class="card" style="width: 18rem;"> ERB
       <img class="card-img-top" src="https://picsum.photo/100/180/" alt="Card image cap">
-
+ <div class="card-body">
 <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-    <div class="card-body">
+   
   <%- columns.each do |column| -%>
 
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
@@ -22,11 +22,12 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+ 
   
     <%- end -%>
 
   <%% end %>
+     </div>
       </div>
 </div>
 
