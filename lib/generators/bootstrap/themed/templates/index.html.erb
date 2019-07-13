@@ -8,7 +8,7 @@
      <div class="card" style="width: 18rem;"> ERB
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
  <div class="card-body">
-  <%- columns[1].each do |column| -%>
+  <%- columns[1] do |column| -%>
 
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
        <h3 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h3>
