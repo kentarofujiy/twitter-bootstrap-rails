@@ -68,9 +68,9 @@
       <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <%% @<%= plural_resource_name %>.each_with_index do |<%= resource_name %>| %>
+      <%% @<%= plural_resource_name %>.each_with_index do |(<%= resource_name %>), i| %>
            <div class="carousel-item">
-   <%- index -%>
+<%= i %>
         <img src="https://picsum.photos/960" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
                   <%- columns.each_with_index do |column, index| -%>
