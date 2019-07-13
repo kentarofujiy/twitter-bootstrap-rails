@@ -4,8 +4,9 @@
 </div>
 <div class="row">
 <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-  <div class="card" style="width: 18rem;"> ERB
+  
   <%- columns.each do |column| -%>
+  <div class="card" style="width: 18rem;"> ERB
       <img class="card-img-top" src="https://picsum.photo/100/180/" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h5>
@@ -21,8 +22,9 @@
                       :class => 'btn btn-xs btn-danger' %>
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+      </div>
     <%- end -%>
-  </div>
+
   <%% end %>
 </div>
 
