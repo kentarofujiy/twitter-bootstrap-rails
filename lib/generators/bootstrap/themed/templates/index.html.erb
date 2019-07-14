@@ -56,7 +56,7 @@
 
 
 <ul class="list-unstyled">
-  <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
+  <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %> %>
   <li class="media">
     <img src="https://picsum.photos/64" class="mr-3" alt="...">
     <div class="media-body">
@@ -65,7 +65,7 @@
         <h5 class="mt-1 mb-1"><%%= <%= resource_name %>.<%= column.name %> %></h5>
       <% elsif index == 1 %>
          <%%= <%= resource_name %>.<%= column.name %> %>
-      <%% end %>
+      <% end %>
           <%- end -%>
     </div>
   </li>
