@@ -20,6 +20,19 @@
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
      
  <div class="card-body">
+
+        <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
+      <h2 class="card-title"><%%= <%= resource_name %>.titulo %></h2>
+           </a>
+    
+      <p class="card-text"><%%= <%= resource_name %>.autor> %></p>
+  
+      <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.editora> %></small></p>
+
+     </div>
+     </a>
+       <div class="card-footer">
+         <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
       <% if index == 1 %>
         <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
@@ -33,9 +46,6 @@
        <% end %>
     <%- end -%>
      </div>
-     </a>
-       <div class="card-footer">
-        
         </div>
       </div>
 
