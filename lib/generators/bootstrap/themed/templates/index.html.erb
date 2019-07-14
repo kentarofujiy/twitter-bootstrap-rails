@@ -49,13 +49,28 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Table</h1>
+    <h1 class="display-4">Media</h1>
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
 </div>
 
 
+<ul class="list-unstyled">
+  <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
+  <li class="media">
+    <img src="https://picsum.photos/64" class="mr-3" alt="...">
+    <div class="media-body">
+        <%- columns.each_with_index do |column, index| -%>
+      <% if index == 0 %>
+        <h5 class="mt-1 mb-1"><%%= <%= resource_name %>.<%= column.name %> %></h5>
+      <% elsif index == 1 %>
+         <%%= <%= resource_name %>.<%= column.name %> %>
+      <%% end %>
+    </div>
+  </li>
+  <%% end %>
 
+</ul>
 
 
 
