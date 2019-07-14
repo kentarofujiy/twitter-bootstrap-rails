@@ -29,7 +29,7 @@
          
                                        <% if index == 0 %>
                 <h2 class="align-center pb-3 mbr-fonts-style display-5"><%%= @<%= resource_name %>.<%= column.name %> %></h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7"><em>By John Smith posted><%%= @<%= resource_name %>.created_at %></em></h3>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7"><em>By John Smith posted><%%= @<%= resource_name %>.created_at.strftime("%d / %m / %Y") %></em></h3>
                 
             </div>
         </div>
