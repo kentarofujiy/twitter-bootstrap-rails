@@ -63,9 +63,14 @@
 <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
+           <%% @<%= plural_resource_name %>.each_with_index do |(<%= resource_name %>), idx| %>
+             <%% if idx == 0 %>
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+           <%% else %>
+      <li data-target="#carouselExampleCaptions" data-slide-to="<%%= idx %>"></li>
+      <%% end %>
+        <%% end %>
+      
     </ol>
     <div class="carousel-inner">
       <%% @<%= plural_resource_name %>.each_with_index do |(<%= resource_name %>), i| %>
