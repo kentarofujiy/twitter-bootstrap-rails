@@ -59,9 +59,9 @@
   <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
    
   <li class="media">
-               <%= link_to(@<%= resource_name %>) do %>
+               <%%= link_to(@<%%= resource_name %>) do %>
     <img src="https://picsum.photos/64" class="mr-3" alt="...">
-                <% end %>
+                <%% end %>
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
       <% if index == 0 %>
