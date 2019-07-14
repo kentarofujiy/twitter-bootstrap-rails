@@ -1,3 +1,4 @@
+<%%- model_class = <%= resource_name.classify %> -%>
 <section class="mbr-section content5 cid-qvbiXHsAN2 mbr-parallax-background" style="background-image: url(https://picsum.photos/1080/580); z-index: 0; position: relative;  background-attachment: scroll; background-size: auto">
 
     
@@ -8,7 +9,7 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">BOOTSTRAP 4 BLOG TEMPLATE</h1>
+                <h1 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1"><%%=t '.title', :default => model_class.model_name.human.titleize %></h1>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">Make your own bootstrap blog in minutes!&nbsp;</h3>
                 
                 
@@ -24,7 +25,9 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-5">DROP-DEAD EASY BOOTSTRAP BLOG</h2>
+                <%- columns.each_with_index do |column, index| -%>
+                    <% if index == 0 %>
+                <h2 class="align-center pb-3 mbr-fonts-style display-5"><%%= @<%= resource_name %>.<%= column.name %> %></h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7"><em>By John Smith posted July 30, 2016</em></h3>
                 
             </div>
@@ -38,7 +41,8 @@
 
     <div class="container">
         <div class="media-container-row">
-            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">Proin id eros arcu. Integer neque urna, malesuada vel iaculis ac, elementum ut mauris. Proin auctor sapien eu lacus congue, tincidunt luctus nisi egestas. Pellentesque venenatis risus id odio ullamcorper commodo. Mauris pellentesque sapien commodo elit condimentum porta a at purus. Nam vitae odio et augue semper ultrices. Vestibulum ut neque vel elit commodo euismod. Morbi viverra sapien eu sapien ultricies egestas. Mauris porta massa vitae euismod iaculis. Sed finibus enim eu eleifend suscipit. Suspendisse molestie rutrum interdum.&nbsp;</div>
+            <% elsif index == 1 %>
+            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7"><%%= @<%= resource_name %>.<%= column.name %> %</div>
         </div>
     </div>
 </section>
@@ -49,31 +53,21 @@
 
     <div class="container">
         <div class="media-container-row">
+            <% else %>
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <blockquote>Nullam at tellus a ante dictum sagittis. Aenean malesuada, turpis non aliquam blandit, nisl dui pellentesque tortor, malesuada consectetur sem lectus sed lacus. Nulla nec turpis mattis dui ornare blandit. Ut leo nisl, tempus ut bibendum in, iaculis quis felis. Aliquam et lorem vel dolor tincidunt vulputate vel sed lacus. Morbi tristique elementum vehicula. Duis sem tellus, porta in leo sed, porttitor aliquet magna. Ut cursus erat sed pulvinar semper. Donec gravida porttitor arcu, sed vulputate libero. Morbi non justo ac tellus tempus ornare. Nam tortor augue, commodo eget lobortis non, consectetur eget eros. In hac habitasse platea dictumst. Nam congue odio neque, in tempus sapien faucibus non.&nbsp;</blockquote>
+                <blockquote><%%= @<%= resource_name %>.<%= column.name %> %></blockquote>
             </div>
+            <% end %>
+            <%- end -%>
         </div>
     </div>
 </section>
 
-<section class="cid-qvbjxOlHgO" id="image1-80" data-rv-view="3588">
-
-    
-
-    <figure class="mbr-figure container">
-            <div class="image-block" style="width: 66%;">
-                <img src="assets/images/coffee-923094-1920-1920x1280-16-1400x933.jpg" width="1400" alt="Mobirise" title="" media-simple="true">
-                <figcaption class="mbr-figure-caption mbr-figure-caption-over">
-                    <div class="container pb-5 mbr-white align-center mbr-fonts-style display-7">Vestibulum id nisl eu ipsum ultrices sodales. Donec non nibh at diam porta porttitor. Aenean dignissim porttitor aliquam. Etiam a sapien quis velit rhoncus pulvinar. Nunc dictum pretium lacus, nec convallis mauris vestibulum sit amet. Nam pretium tristique mauris in tempor. Phasellus consequat ipsum quis libero tristique ornare. Nulla ante libero, viverra at eros eu, fermentum rutrum lacus.</div>
-                </figcaption>
-            </div>
-    </figure>
-</section>
 
 
-<%%- model_class = <%= resource_name.classify %> -%>
+
 <div class="page-header">
-  <h1><%%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1></h1>
 </div>
 
 <dl class="dl-horizontal">
