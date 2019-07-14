@@ -57,11 +57,12 @@
   <div class="container">
 <ul class="list-unstyled">
   <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-              <%%= link_to t('.show', :default => t("helpers.links.show")),
-                      <%= singular_controller_routing_path %>_path(<%= resource_name %>), :class => 'btn btn-default' %>
+   
   <li class="media">
+               <%% link_to t('.show', :default => t("helpers.links.show")),
+                      <%= singular_controller_routing_path %>_path(<%= resource_name %>) do %>
     <img src="https://picsum.photos/64" class="mr-3" alt="...">
-
+                <%% end %>
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
       <% if index == 0 %>
