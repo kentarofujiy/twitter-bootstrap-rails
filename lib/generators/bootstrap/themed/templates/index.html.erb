@@ -14,10 +14,11 @@
 <div class="card-deck">
     
 <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-     <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
+    
      <div class="card">
     
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
+       <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
       <% if index == 1 %>
@@ -29,12 +30,12 @@
        <% end %>
     <%- end -%>
      </div>
-    
+     </a>
        <div class="card-footer">
         
         </div>
       </div>
- </a>
+
   <%% end %>
 </div>
 
