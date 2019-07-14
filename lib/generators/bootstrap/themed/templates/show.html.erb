@@ -66,17 +66,6 @@
 
 
 
-<div class="page-header">
-  <h1></h1>
-</div>
-
-<dl class="dl-horizontal">
-<%- columns.each do |column| -%>
-  <dt><strong><%%= model_class.human_attribute_name(:<%= column.name %>) %>:</strong></dt>
-  <dd><%%= @<%= resource_name %>.<%= column.name %> %></dd>
-<%- end -%>
-</dl>
-
 <%%= link_to t('.back', :default => t("helpers.links.back")),
               <%= controller_routing_path %>_path, :class => 'btn btn-default'  %>
 <%%= link_to t('.edit', :default => t("helpers.links.edit")),
