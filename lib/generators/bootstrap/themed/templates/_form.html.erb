@@ -27,9 +27,8 @@
  <div class="form-group">
     <%%= f.label :avatar, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%%= f.file_field <%%= :<%= resource_name %>.avatar %>, :class => 'form-control' %>
+      <%%= f.file_field :<%%= <%= resource_name %>.avatar %>, :class => 'form-control' %>
     </div>
-      <%%=f.error_span(<%%= :<%= resource_name %>.avatar %> %>) %>
      </div>
      
        <%- end -%>
