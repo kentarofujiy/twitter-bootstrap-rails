@@ -17,7 +17,7 @@
     
      <div class="card">
     
-      <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
+      <img class="card-img-top" src="<%% if <%= resource_name %>.avatar.attached? %> <%%= url_for <%= resource_name %>.avatar %> <%% else %> https://picsum.photos/180/100<%% end %>" class="mr-3" alt="..." style="max-width:180px; max-height:100px;" alt="Card image cap">
      
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
@@ -65,7 +65,7 @@
               <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
   <li class="media">
     
-    <img src="<%% if <%= resource_name %>.avatar.attached? %> <%%= url_for <%= resource_name %>.avatar %> <%% else %> https://picsum.photos/180/100<%% end %>" class="mr-3" alt="..." style="max-width:180px; max-height:100px">
+    <img src="<%% if <%= resource_name %>.avatar.attached? %> <%%= url_for <%= resource_name %>.avatar %> <%% else %> https://picsum.photos/64/64<%% end %>" class="mr-3" alt="..." style="max-width:64px; max-height:64">
      
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
