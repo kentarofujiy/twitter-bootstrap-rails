@@ -20,24 +20,33 @@
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
      
  <div class="card-body">
-
-        <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
-      <h2 class="card-title"><%%= <%= resource_name %>.titulo %></h2>
-           </a>
-    
-      <p class="card-text"><%%= <%= resource_name %>.autor %></p>
+  <%- columns.each_with_index do |column, index| -%>
   
-      <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.editora %></small></p>
-
+        <% if index == 0 %>
+                <p hidden><%%= @<%= resource_name %>.<%= column.name %> %></p>
+                    <% elsif index == 1 %>
+      <h2 class="card-title"> <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>"><%%= <%= resource_name %>.<%= column.name %> %></a></h2>
+      <% elsif index == 2 %>
+      <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %></p>
+      <% else %>
+      <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.<%= column.name %> %></small></p>
+       <% end %>
+    <%- end -%>
      </div>
-     </a>
+  
        <div class="card-footer">
   
-  <%- columns.each_with_index do |column, index| -%>
-     
-        <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.<%= column.name %> %></small></p>
-  
-    <%- end -%>
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+      
+          <%%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_<%= singular_controller_routing_path %>_path(<%= resource_name %>), :class => 'btn btn-default' %>
+          <%%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      <%= singular_controller_routing_path %>_path(<%= resource_name %>),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-danger' %>
+        </div>
      </div>
    
       </div>
