@@ -65,7 +65,7 @@
               <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
   <li class="media">
     
-    <img src="<% if @<%%= <%= resource_name %>.avatar.attached? %> %><%%= <%= resource_name %>.avatar %> %><% else %> https://picsum.photos/64 /<% end %>" class="mr-3" alt="...">
+    <img src="<% if <%%= <%= resource_name %>.avatar.attached? %> %><%%= <%= resource_name %>.avatar %> %><% else %> https://picsum.photos/64 /<% end %>" class="mr-3" alt="...">
      
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
