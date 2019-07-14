@@ -18,11 +18,13 @@
      <div class="card">
     
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
-       <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
+     
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
       <% if index == 1 %>
+        <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
       <h2 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h2>
+       </a>
       <% elsif index == 2 %>
       <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %></p>
       <% else %>
@@ -66,7 +68,7 @@
     </div>
        
   </li>
-     </a>
+    
   <%% end %>
 </ul>
 
