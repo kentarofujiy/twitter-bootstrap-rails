@@ -32,21 +32,14 @@
      </div>
      </a>
        <div class="card-footer">
-         <div class="card-body">
+  
   <%- columns.each_with_index do |column, index| -%>
-      <% if index == 1 %>
-        <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
-      <h2 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h2>
-      <h1><%%= <%= resource_name %>.titulo %></h1>
-       </a>
-      <% elsif index == 2 %>
-      <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %></p>
-      <% else %>
-      <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.<%= column.name %> %></small></p>
-       <% end %>
+     
+        <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.<%= column.name %> %></small></p>
+  
     <%- end -%>
      </div>
-        </div>
+   
       </div>
 
   <%% end %>
