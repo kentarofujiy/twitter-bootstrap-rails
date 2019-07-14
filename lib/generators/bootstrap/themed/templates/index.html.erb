@@ -62,7 +62,7 @@
   <div class="container">
 <ul class="list-unstyled">
   <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-              <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
+           
   <li class="media">
     
     <img src="<%% if <%= resource_name %>.avatar.attached? %> <%%= url_for <%= resource_name %>.avatar %> <%% else %> https://picsum.photos/64/64<%% end %>" class="mr-3" alt="..." style="max-width:64px; max-height:64">
@@ -70,7 +70,7 @@
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
       <% if index == 1 %>
-        <h5 class="mt-1 mb-1"><%%= <%= resource_name %>.<%= column.name %> %></h5>
+        <h5 class="mt-1 mb-1">   <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>"><%%= <%= resource_name %>.<%= column.name %> %></a></h5>
       <% elsif index == 2 %>
          <%%= <%= resource_name %>.<%= column.name %> %>
       <% end %>
