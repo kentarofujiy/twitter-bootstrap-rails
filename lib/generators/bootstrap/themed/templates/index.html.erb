@@ -23,7 +23,7 @@
   <%- columns.each_with_index do |column, index| -%>
   
         <% if index == 0 %>
-                <p hidden><%%= @<%= resource_name %>.<%= column.name %> %></p>
+                <p hidden><%%= <%= resource_name %>.<%= column.name %> %></p>
                     <% elsif index == 1 %>
       <h2 class="card-title"> <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>"><%%= <%= resource_name %>.<%= column.name %> %></a></h2>
       <% elsif index == 2 %>
