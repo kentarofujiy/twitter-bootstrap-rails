@@ -61,7 +61,7 @@ module Bootstrap
       end
 
       def excluded_columns_names
-        %w[_id _type id created_at updated_at]
+        %w[_id _type id avatar created_at updated_at]
       end
 
       def excluded_columns_pattern
