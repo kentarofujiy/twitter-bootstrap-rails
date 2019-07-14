@@ -15,18 +15,20 @@
     
 <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
      <div class="card">
+         <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
       <img class="card-img-top" src="https://picsum.photos/100/180/" alt="Card image cap">
  <div class="card-body">
   <%- columns.each_with_index do |column, index| -%>
-      <% if index == 0 %>
+      <% if index == 1 %>
       <h2 class="card-title"><%%= <%= resource_name %>.<%= column.name %> %></h2>
-      <% elsif index == 1 %>
+      <% elsif index == 2 %>
       <p class="card-text"><%%= <%= resource_name %>.<%= column.name %> %></p>
       <% else %>
       <p class="card-text"><small class="text-muted"><%%= <%= resource_name %>.<%= column.name %> %></small></p>
        <% end %>
     <%- end -%>
      </div>
+     </a>
        <div class="card-footer">
          <div class="btn-group" role="group" aria-label="Basic example">
 
@@ -61,18 +63,18 @@
   <li class="media">
                <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
     <img src="https://picsum.photos/64" class="mr-3" alt="...">
-           </a>
+     
     <div class="media-body">
         <%- columns.each_with_index do |column, index| -%>
-      <% if index == 0 %>
+      <% if index == 1 %>
         <h5 class="mt-1 mb-1"><%%= <%= resource_name %>.<%= column.name %> %></h5>
-      <% elsif index == 1 %>
+      <% elsif index == 2 %>
          <%%= <%= resource_name %>.<%= column.name %> %>
       <% end %>
           <%- end -%>
     </div>
   </li>
-  
+        </a>
   <%% end %>
 </ul>
 
