@@ -42,7 +42,7 @@
     <div class="container">
         <div class="media-container-row">
             <% elsif index == 1 %>
-            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7"><%%= @<%= resource_name %>.<%= column.name %> %</div>
+            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7"><%%= @<%= resource_name %>.<%= column.name %> %></div>
         </div>
     </div>
 </section>
@@ -66,4 +66,13 @@
 
 
 
+<%%= link_to t('.back', :default => t("helpers.links.back")),
+              <%= controller_routing_path %>_path, :class => 'btn btn-default'  %>
+<%%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_<%= singular_controller_routing_path %>_path(@<%= resource_name %>), :class => 'btn btn-default' %>
+<%%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              <%= singular_controller_routing_path %>_path(@<%= resource_name %>),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
         <%- end -%>
