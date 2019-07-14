@@ -122,6 +122,7 @@ module Bootstrap
           "index.html.#{ext}"                 => File.join('app/views', @controller_file_path, "index.html.#{ext}"),
           "_carousel.html.#{ext}"             => File.join('app/views', @controller_file_path, "_carousel.html.#{ext}"),
           "_table.html.#{ext}"                => File.join('app/views', @controller_file_path, "_table.html.#{ext}"),
+           "_imedia.html.#{ext}"              => File.join('app/views', @controller_file_path, "_imedia.html.#{ext}"),
           "new.html.#{ext}"                   => File.join('app/views', @controller_file_path, "new.html.#{ext}"),
           "edit.html.#{ext}"                  => File.join('app/views', @controller_file_path, "edit.html.#{ext}"),
           "#{form_builder}_form.html.#{ext}"  => File.join('app/views', @controller_file_path, "_form.html.#{ext}"),

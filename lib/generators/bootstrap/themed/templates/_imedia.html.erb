@@ -1,0 +1,19 @@
+<%%- model_class = <%= resource_name.classify %> -%>
+
+<ul class="list-unstyled">
+  <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
+  <li class="media">
+    <img src="https://picsum.photos/64" class="mr-3" alt="...">
+    <div class="media-body">
+        <%- columns.each_with_index do |column, index| -%>
+      <% if index == 0 %>
+        <h5 class="mt-1 mb-1"><%%= <%= resource_name %>.<%= column.name %> %></h5>
+      <% elsif index == 1 %>
+         <%%= <%= resource_name %>.<%= column.name %> %>
+      <% end %>
+          <%- end -%>
+    </div>
+  </li>
+  <%% end %>
+
+</ul>
