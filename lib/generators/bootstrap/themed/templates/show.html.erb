@@ -58,7 +58,7 @@
                 <blockquote><%%= @<%= resource_name %>.<%= column.name %> %></blockquote>
             </div>
             <% end %>
-            <%- end -%>
+    
         </div>
     </div>
 </section>
@@ -75,3 +75,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+        <%- end -%>
