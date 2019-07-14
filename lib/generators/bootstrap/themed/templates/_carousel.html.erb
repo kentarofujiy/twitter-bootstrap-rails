@@ -1,0 +1,48 @@
+<div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+           <%% @<%= plural_resource_name %>.each_with_index do |(<%= resource_name %>), idx| %>
+             <%% if idx == 0 %>
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+           <%% else %>
+      <li data-target="#carouselExampleCaptions" data-slide-to="<%%= idx %>"></li>
+      <%% end %>
+        <%% end %>
+      
+    </ol>
+    <div class="carousel-inner">
+      <%% @<%= plural_resource_name %>.each_with_index do |(<%= resource_name %>), i| %>
+      <%% if i == 0 %>
+           <div class="carousel-item active">
+      <%% else %>
+                <div class="carousel-item">
+          <%% end %>
+
+        <img src="https://picsum.photos/960" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+                  <%- columns.each_with_index do |column, index| -%>
+      <% if index == 0 %>
+          <h5><%%= <%= resource_name %>.<%= column.name %> %></h5>
+           <% elsif index == 1 %>
+      <p ><%%= <%= resource_name %>.<%= column.name %> %></p>
+
+               <% end %>
+    <%- end -%>
+          </div>
+      </div>
+
+        <%% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
