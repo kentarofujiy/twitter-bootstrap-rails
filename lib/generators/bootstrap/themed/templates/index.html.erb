@@ -59,9 +59,9 @@
   <div class="container">
 <ul class="list-unstyled">
   <%% @<%= plural_resource_name %>.each do |<%= resource_name %>| %>
-   
+              <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
   <li class="media">
-               <a href="<%= plural_resource_name %>/<%%= <%= resource_name %>.id %>">
+    
     <img src="https://picsum.photos/64" class="mr-3" alt="...">
      
     <div class="media-body">
@@ -73,9 +73,9 @@
       <% end %>
           <%- end -%>
     </div>
-         </a>
+       
   </li>
-   
+     </a>
   <%% end %>
 </ul>
 
